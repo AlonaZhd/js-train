@@ -103,6 +103,18 @@ Biography.title = "Загальна Біографія";
 Biography.author = "Біограф";
 Biography.pages = 200;
 
+// const Biography = Object.create(Book, {
+//     title: {
+//         value: "Загальна Біографія",
+//     },
+//     author: {
+//         value: "Біограф",
+//     },
+//     pages: {
+//         value: 200,
+//     },
+// });
+
 // Змінемо прототип об'єкта Biography на Novel
 
 Object.setPrototypeOf(Biography, Novel);
