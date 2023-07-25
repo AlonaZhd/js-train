@@ -15,7 +15,36 @@ function task2() {
     // У разі успіху виводимо результат
     // У разі помилки виводимо повідомлення про помилку
     // Незалежно від результату, виводимо повідомлення про завершення обробки промісів, який є рядом "Завдання 2 завершено"
+    function promise1() {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve("Проміс 1 виконано");
+            }, 2000);
+        });
+    }
+
+    function promise2() {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve("Проміс 2 виконано");
+            }, 5000);
+        });
+    }
+
+    Promise.race([promise1(), promise2()])
+        .then((data) => {
+            console.log(data);
+        })
+        .catch((error) => {
+            console.error("Помилка:", error.message);
+        })
+        .finally(() => {
+            console.log("Завдання 2 завершено");
+        });
 }
 
 // Викликаємо функцію task2
 task2();
+
+// Проміс 1 виконано
+// Завдання 2 завершено
